@@ -31,9 +31,10 @@ class XwebunSpider(scrapy.Spider):
     def parse_article(self, response):
         title = response.css("h1.tdb-title-text ::text").get()
 
-        first = response.css(".tdb-block-inner.td-fix-index p::text").get()
-        texts = response.css(".tdb-block-inner.td-fix-index p::text").getall()
-        text = "\n".join([i for i in [first, *texts] if i])
+        texts = texts = response.css(
+            ".td_block_wrap.tdb_single_content.tdi_80.td-pb-border-top.td_block_template_1.td-post-content.tagdiv-type .tdb-block-inner.td-fix-index p::text"
+        ).getall()
+        text = "\n".join(texts)
 
         yield {
             "title": title,
