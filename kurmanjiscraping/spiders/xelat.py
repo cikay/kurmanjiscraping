@@ -18,9 +18,13 @@ class XelatSpider(scrapy.Spider):
     def parse_article(self, response):
         title = response.css("h1.title ::text").get()
         text_array = response.css(".post-text ::text").getall()
+        filtered = []
+        for item in text_array:
+            if item.strip() not in {"Xelat", "XELAT"}:
+                filtered.append(item)
 
         yield {
             "title": title,
-            "content": "".join(text_array),
+            "content": "".join(filtered).strip(),
             "url": response.url,
         }
