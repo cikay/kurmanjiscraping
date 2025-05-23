@@ -130,7 +130,7 @@ DOWNLOAD_TIMEOUT = 180  # Increased timeout for Selenium operations
 RETRY_HTTP_CODES = [403, 500, 502, 503, 504, 408, 429]
 
 # Respect the site by slowing down requests
-DOWNLOAD_DELAY = 5
+DOWNLOAD_DELAY = 1
 RANDOMIZE_DOWNLOAD_DELAY = True
 
 # Cookie handling
