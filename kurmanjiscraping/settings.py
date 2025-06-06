@@ -113,7 +113,7 @@ AUTOTHROTTLE_DEBUG = True
 ROBOTSTXT_OBEY = False
 
 # Add HTTP cache to reduce requests to the server
-HTTPCACHE_ENABLED = True
+HTTPCACHE_ENABLED = False
 HTTPCACHE_EXPIRATION_SECS = 86400
 HTTPCACHE_DIR = "httpcache"
 
@@ -130,7 +130,7 @@ DOWNLOAD_TIMEOUT = 180  # Increased timeout for Selenium operations
 RETRY_HTTP_CODES = [403, 500, 502, 503, 504, 408, 429]
 
 # Respect the site by slowing down requests
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 3
 RANDOMIZE_DOWNLOAD_DELAY = True
 
 # Cookie handling
